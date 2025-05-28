@@ -6,6 +6,13 @@ This project is a **Real Estate Listing Website** built using **HTML, CSS, and J
 
 ## Prerequisites
 
+Create an config.js file in the root directory with the following code inside :
+window.config = {
+  GOOGLE_MAPS_API_KEY: "YOUR_GOOGLE_MAPS_API_KEY",
+  GOOGLE_MAPS_ID: "YOUR_MAPS_ID",
+};
+
+
 - Node.js (v16+ recommended)
 - npm (comes with Node.js)
 - Modern browser (Chrome, Firefox, Edge)
