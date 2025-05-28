@@ -1,0 +1,60 @@
+@use "./variables" as var;
+@use "sass:map";
+
+@mixin respond-to($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin card-style {
+  background-color: var.$card-bg-color;
+  border-radius: var.$border-radius;
+  box-shadow: var.$box-shadow;
+
+  @include transition-all;
+}
+
+@mixin property-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: map.get(var.$spacing-scale, "15");
+  margin-top: map.get(var.$spacing-scale, "1");
+}
+
+@mixin button-style(
+  $bg-color: var.$primary-color,
+  $hover-color: var.$btn-hover-color
+) {
+  display: inline-block;
+  padding: map.get(var.$spacing-scale, "075") map.get(var.$spacing-scale, "15");
+  border-radius: var.$border-radius;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font-size: map.get(var.$spacing-scale, "1");
+  font-weight: 600;
+  color: var.$text-color;
+  background-color: $bg-color;
+
+  @include transition-all;
+
+  &:hover,
+  &:focus {
+    background-color: $hover-color;
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+@mixin transition-all(
+  $properties: all,
+  $duration: var.$transition-medium,
+  $timing: ease
+) {
+  transition: $properties $duration $timing;
+}

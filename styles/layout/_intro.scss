@@ -1,0 +1,25 @@
+@use "../base/variables" as var;
+@use "../base/mixins" as mix;
+@use "../components/buttons";
+@use "sass:map";
+
+.intro {
+  text-align: center;
+  padding: map.get(var.$spacing-scale, "50px") 0;
+
+  h1 {
+    font-size: map.get(var.$spacing-scale, "25");
+    color: var.$primary-color;
+    margin-bottom: map.get(var.$spacing-scale, "20px");
+  }
+
+  p {
+    font-size: map.get(var.$spacing-scale, "20px");
+    color: var.$heading-color;
+    margin-bottom: map.get(var.$spacing-scale, "30px");
+  }
+
+  .btn {
+    @include mix.button-style;
+  }
+}

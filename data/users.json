@@ -1,0 +1,175 @@
+[
+  {
+    "id": 1,
+    "email": "admin@realestate.com",
+    "password": "admin123",
+    "name": "Admin User",
+    "role": "admin"
+  },
+  {
+    "id": 2,
+    "email": "bozhidar.nunev@gmail.com",
+    "password": "dadada",
+    "name": "Bozhidar Nunev",
+    "role": "user",
+    "featuredListings": [
+      {
+        "id": 1,
+        "title": "Luxury House in LA",
+        "price": 750000,
+        "location": "Los Angeles, CA",
+        "image": "/assets/house1.jpg",
+        "type": "house",
+        "latitude": 34.0522,
+        "longitude": -118.2437,
+        "description": "Stunning modern luxury home in the heart of Los Angeles featuring 5 bedrooms, 4.5 bathrooms, a gourmet kitchen, infinity pool, and panoramic city views. The property includes smart home technology throughout and a rooftop terrace perfect for entertaining."
+      },
+      {
+        "id": 2,
+        "title": "Modern Apartment in NY",
+        "price": 450000,
+        "location": "New York, NY",
+        "image": "/assets/house21.jpg",
+        "type": "apartment",
+        "latitude": 40.7128,
+        "longitude": -74.006,
+        "description": "Sophisticated 2-bedroom apartment in Manhattan with floor-to-ceiling windows offering breathtaking city views. Features include hardwood floors, stainless steel appliances, concierge service, and access to building amenities including fitness center and rooftop lounge."
+      },
+      {
+        "id": 3,
+        "title": "Cozy Condo in SF",
+        "price": 600000,
+        "location": "San Francisco, CA",
+        "image": "/assets/house22.jpg",
+        "type": "condo",
+        "latitude": 37.7749,
+        "longitude": -122.4194,
+        "description": "Charming 2-bedroom condo in a prime San Francisco location. This sun-filled unit features an open floor plan, updated kitchen with quartz countertops, in-unit laundry, and a private balcony. Walking distance to restaurants and public transportation."
+      },
+      {
+        "id": 4,
+        "title": "Beach House in Miami",
+        "price": 850000,
+        "location": "Miami, FL",
+        "image": "/assets/house20.jpg",
+        "type": "house",
+        "latitude": 25.7617,
+        "longitude": -80.1918,
+        "description": "Stunning beachfront property with direct ocean access. This 3-bedroom home features a chef's kitchen, spacious outdoor living area with pool, and private beach access. Large windows throughout provide spectacular water views from every room."
+      }
+    ],
+    "savedProperties": [
+      {
+        "id": 7,
+        "title": "Modern Condo in Seattle",
+        "price": 550000,
+        "location": "Seattle, WA",
+        "image": "/assets/house23.jpg",
+        "type": "condo",
+        "latitude": 47.6062,
+        "longitude": -122.3321,
+        "description": "Contemporary 2-bedroom condo in downtown Seattle with panoramic views of Puget Sound. Features include an open floor plan, gourmet kitchen, floor-to-ceiling windows, and access to building amenities including fitness center and rooftop terrace."
+      },
+      {
+        "id": 8,
+        "title": "Villa in San Diego",
+        "price": 950000,
+        "location": "San Diego, CA",
+        "image": "/assets/house19.jpg",
+        "type": "house",
+        "latitude": 32.7157,
+        "longitude": -117.1611,
+        "description": "Stunning Spanish-style villa with 4 bedrooms and a private courtyard. Features include vaulted ceilings, chef's kitchen, solar-heated pool, and mature landscaping. Located in a quiet neighborhood just minutes from the beach."
+      },
+      {
+        "id": 9,
+        "title": "Downtown Apartment in Austin",
+        "price": 480000,
+        "location": "Austin, TX",
+        "image": "/assets/house9.jpg",
+        "type": "apartment",
+        "latitude": 30.2672,
+        "longitude": -97.7431,
+        "description": "Stylish 1-bedroom apartment in the heart of Austin. Features include hardwood floors, stainless steel appliances, walk-in closet, and balcony with downtown views. Building offers pool, fitness center, and is walking distance to entertainment."
+      },
+      {
+        "id": 10,
+        "title": "Cozy Condo in Denver",
+        "price": 520000,
+        "location": "Denver, CO",
+        "image": "/assets/house10.jpg",
+        "type": "condo",
+        "latitude": 39.7392,
+        "longitude": -104.9903,
+        "description": "Charming 2-bedroom condo in a historic Denver building. Features include exposed brick walls, updated kitchen, in-unit laundry, and private balcony. Located in a vibrant neighborhood close to restaurants and parks."
+      }
+    ],
+    "propertiesViewed": [
+      {
+        "id": 19,
+        "title": "Seaside Condo in Charleston",
+        "price": 820000,
+        "location": "Charleston, SC",
+        "image": "/assets/house28.jpg",
+        "type": "condo",
+        "latitude": 32.7765,
+        "longitude": -79.9311,
+        "description": "Beautiful 3-bedroom oceanfront condo with panoramic water views. Features include a gourmet kitchen, spacious master suite, and private balcony. Building offers pool, beach access, and boat storage."
+      },
+      {
+        "id": 20,
+        "title": "Luxury House in Las Vegas",
+        "price": 870000,
+        "location": "Las Vegas, NV",
+        "image": "/assets/house27.jpg",
+        "type": "house",
+        "latitude": 36.1699,
+        "longitude": -115.1398,
+        "description": "Spectacular 5-bedroom home in exclusive Summerlin community. Features include a resort-style backyard with pool and cabana, home theater, game room, and mountain views. Close to top golf courses and shopping."
+      }
+    ],
+    "avatar": "/assets/avatar.jpg",
+    "favoriteProperties": [
+      {
+        "id": 21,
+        "title": "Lakeside View House in Alaska",
+        "price": 650000,
+        "location": "Anchorage, AK",
+        "image": "/assets/house24.jpg",
+        "type": "house",
+        "latitude": 61.2181,
+        "longitude": -149.9003,
+        "description": "Stunning lakeside property with panoramic views of the Alaskan wilderness. This 4-bedroom home features a spacious deck, wood-fired sauna, and direct access to fishing and kayaking. Perfect for nature lovers seeking tranquility."
+      },
+      {
+        "id": 22,
+        "title": "Modern Condo in New York",
+        "price": 1200000,
+        "location": "New York, NY",
+        "image": "/assets/house25.jpg",
+        "type": "condo",
+        "latitude": 40.7128,
+        "longitude": -74.006,
+        "description": "Luxury condo in the heart of Manhattan with floor-to-ceiling windows offering city views. Amenities include 24/7 concierge, fitness center, and rooftop lounge. Close to Central Park and top restaurants."
+      },
+      {
+        "id": 23,
+        "title": "Penthouse in Pennsylvania",
+        "price": 950000,
+        "location": "Philadelphia, PA",
+        "image": "/assets/house26.jpg",
+        "type": "penthouse",
+        "latitude": 39.9526,
+        "longitude": -75.1652,
+        "description": "Elegant penthouse with private elevator access and 360-degree skyline views. Features chef's kitchen, home office, and spa-like master bath. Located in Philadelphia's most prestigious neighborhood."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "email": "agent1@example.com",
+    "password": "agent123",
+    "name": "Jane Smith",
+    "role": "agent"
+  }
+]

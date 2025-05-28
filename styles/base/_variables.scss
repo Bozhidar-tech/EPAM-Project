@@ -1,0 +1,66 @@
+$primary-color: #1abc9c;
+$secondary-color: #16a085;
+$bg-color: #2c3e50;
+$accent-color: #f39c12;
+$text-color: #ecf0f1;
+$heading-color: #95a5a6;
+
+$card-bg-color: #34495e;
+$btn-hover-color: #16a085;
+$footer-bg-color: #34495e;
+$footer-link-hover-color: #3498db;
+
+$input-bg-color: #2c3e50;
+$input-border-color: #34495e;
+$focus-shadow: rgb(26 188 156 / 20%);
+
+$spacing-unit: 1rem;
+$spacing-scale: (
+  "025": 0.25rem,
+  // 4px
+  "05": 0.5rem,
+  // 8px
+  "075": 0.75rem,
+  // 12px
+  "1": 1rem,
+  // 16px
+  "15": 1.5rem,
+  // 24px
+  "2": 2rem,
+  // 32px
+  "25": 2.5rem,
+  // 32px
+  "3": 3rem,
+  // 48px
+  "35": 3.5rem,
+  // 48px
+  "4": 4rem,
+  // 64px
+  "5": 5rem,
+  // 80px
+  "10px": 0.625rem,
+  // 10px
+  "15px": 0.9375rem,
+  // 15px
+  "20px": 1.25rem,
+  // 20px
+  "25px": 1.5625rem,
+  // 25px
+  "30px": 1.875rem,
+  // 30px
+  "35px": 2.1875rem,
+  // 35px
+  "40px": 2.5rem,
+  // 40px
+  "50px": 3.125rem // 50px,,,
+);
+
+$max-width: 100%;
+
+$border-radius: 10px;
+$box-shadow: 0 4px 10px rgb(0 0 0 / 20%);
+
+$transition-medium: 0.3s;
+
+$tablet: 768px;
+$mobile: 480px;

@@ -1,0 +1,31 @@
+@use "../base/variables" as var;
+@use "../base/mixins" as mix;
+@use "sass:color";
+@use "sass:map";
+
+.btn {
+  @include mix.button-style;
+
+  &--form {
+    width: 100%;
+    margin-top: map.get(var.$spacing-scale, "25");
+    padding: map.get(var.$spacing-scale, "15");
+    font-size: map.get(var.$spacing-scale, "1");
+  }
+
+  &--accent {
+    background-color: var.$accent-color;
+  }
+
+  &--outline {
+    background-color: transparent;
+    border: 2px solid var.$primary-color;
+    color: var.$primary-color;
+
+    &:hover,
+    &:focus {
+      background-color: var.$primary-color;
+      color: var.$text-color;
+    }
+  }
+}

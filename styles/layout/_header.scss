@@ -1,0 +1,94 @@
+@use "../base/variables" as var;
+@use "../base/mixins" as mix;
+@use "sass:color";
+@use "sass:map";
+@use "../components/buttons";
+
+header {
+  background-color: var.$bg-color;
+  padding: map.get(var.$spacing-scale, "15px") 0;
+  box-shadow: 0 4px 6px rgb(0 0 0 / 10%);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.main-nav {
+  max-width: var.$max-width;
+  margin: 0 auto;
+  padding: 0 map.get(var.$spacing-scale, "2");
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-nav .login-btn {
+  @include mix.button-style($bg-color: var.$accent-color);
+
+  margin-left: auto;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  flex-grow: 1;
+  align-items: center;
+  list-style: none;
+  gap: map.get(var.$spacing-scale, "20px");
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  color: var.$text-color;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: map.get(var.$spacing-scale, "1");
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: map.get(var.$spacing-scale, "10px");
+  transition: color var.$transition-medium ease;
+}
+
+.submenu li a {
+  display: block;
+  padding: map.get(var.$spacing-scale, "10px")
+    map.get(var.$spacing-scale, "20px");
+  font-size: map.get(var.$spacing-scale, "1");
+  text-transform: none;
+}
+
+.nav-links a:hover {
+  color: var.$primary-color;
+}
+
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: color.scale(var.$card-bg-color, $lightness: -10%);
+  border-radius: var.$border-radius;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+
+  @include mix.transition-all;
+
+  min-width: 200px;
+  padding: map.get(var.$spacing-scale, "10px") 0;
+  z-index: 100;
+  list-style: none;
+}
+
+.submenu li a:hover {
+  background: rgba(var.$primary-color, 0.2);
+}
+
+.dropdown:hover .submenu {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}

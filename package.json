@@ -1,0 +1,27 @@
+{
+  "name": "capstone-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "sass styles/main.scss styles/main.css",
+    "lint:js": "eslint . --ext .js",
+    "lint:scss": "stylelint '**/*.scss'",
+    "lint": "npm run lint:js && npm run lint:scss"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.23.0",
+    "@stylistic/stylelint-plugin": "^3.1.2",
+    "eslint": "^9.23.0",
+    "globals": "^16.0.0",
+    "sass": "^1.86.0",
+    "stylelint": "^16.17.0",
+    "stylelint-config-standard": "^37.0.0",
+    "stylelint-scss": "^6.11.1",
+    "typescript-eslint": "^8.29.0"
+  }
+}

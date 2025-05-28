@@ -1,0 +1,45 @@
+@use "../base/variables" as var;
+@use "../base/mixins" as mix;
+@use "sass:map";
+
+.swiper-container {
+  margin-top: map.get(var.$spacing-scale, "3");
+  height: 400px;
+  width: 100%;
+  position: relative;
+
+  @include mix.respond-to(var.$tablet) {
+    height: 350px;
+  }
+
+  @include mix.respond-to(var.$mobile) {
+    height: 300px;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: var.$primary-color;
+    font-size: map.get(var.$spacing-scale, "2");
+    width: map.get(var.$spacing-scale, "40px");
+    height: map.get(var.$spacing-scale, "40px");
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+
+    .swiper-button-prev {
+      left: map.get(var.$spacing-scale, "10px");
+    }
+
+    .swiper-button-next {
+      right: map.get(var.$spacing-scale, "10px");
+    }
+
+    &:hover {
+      background-color: rgba(var.$primary-color, 0.1);
+    }
+
+    @include mix.respond-to(var.$mobile) {
+      font-size: map.get(var.$spacing-scale, "15");
+    }
+  }
+}

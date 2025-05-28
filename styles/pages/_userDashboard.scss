@@ -1,0 +1,288 @@
+@use "../base/variables" as var;
+@use "../base/mixins" as mix;
+@use "sass:color";
+@use "sass:map";
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var.$bg-color;
+  color: var.$text-color;
+
+  &-header {
+    background-color: var.$card-bg-color;
+    padding: map.get(var.$spacing-scale, "1");
+    box-shadow: var.$box-shadow;
+  }
+
+  &-main {
+    display: flex;
+    flex-grow: 1;
+
+    @include mix.respond-to(var.$tablet) {
+      flex-direction: column;
+    }
+  }
+
+  &-sidebar {
+    width: 280px;
+    background-color: color.adjust(var.$card-bg-color, $lightness: -5%);
+    padding: map.get(var.$spacing-scale, "2");
+    display: flex;
+    flex-direction: column;
+
+    @include mix.respond-to(var.$tablet) {
+      width: 100%;
+      padding: map.get(var.$spacing-scale, "1");
+    }
+  }
+
+  &-content {
+    flex-grow: 1;
+    padding: map.get(var.$spacing-scale, "2");
+    background-color: color.adjust(var.$bg-color, $lightness: 2%);
+
+    @include mix.respond-to(var.$tablet) {
+      padding: map.get(var.$spacing-scale, "1");
+    }
+  }
+
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: map.get(var.$spacing-scale, "4");
+
+    @include mix.respond-to(var.$mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &-nav {
+    margin-top: map.get(var.$spacing-scale, "2");
+    flex-grow: 1;
+
+    i {
+      color: var.$primary-color;
+      width: map.get(var.$spacing-scale, "20px");
+      text-align: center;
+
+      @include mix.transition-all;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: map.get(var.$spacing-scale, "1");
+      padding: map.get(var.$spacing-scale, "20px");
+      text-decoration: none;
+      color: var.$text-color;
+      font-weight: 600;
+      position: relative;
+
+      &:hover {
+        color: var.$text-color;
+      }
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: map.get(var.$spacing-scale, "05");
+    }
+
+    li {
+      @include mix.transition-all;
+
+      border-radius: var.$border-radius;
+      overflow: hidden;
+
+      &:hover {
+        background-color: color.adjust(var.$card-bg-color, $lightness: 5%);
+      }
+    }
+
+    li.active {
+      background-color: var.$primary-color;
+    }
+
+    li.active a {
+      color: var.$text-color;
+    }
+
+    @include mix.respond-to(var.$tablet) {
+      margin-top: map.get(var.$spacing-scale, "1");
+
+      ul {
+        flex-flow: row wrap;
+      }
+
+      li {
+        flex: 1 1 auto;
+      }
+    }
+
+    @include mix.respond-to(var.$mobile) {
+      position: sticky;
+      bottom: 0;
+      background: var.$card-bg-color;
+      padding: map.get(var.$spacing-scale, "1") 0;
+      margin-top: auto;
+
+      ul {
+        justify-content: space-around;
+      }
+
+      a {
+        padding: map.get(var.$spacing-scale, "1");
+        flex-direction: column;
+        font-size: map.get(var.$spacing-scale, "075");
+        gap: map.get(var.$spacing-scale, "025");
+      }
+
+      i {
+        font-size: map.get(var.$spacing-scale, "20px");
+      }
+    }
+  }
+}
+
+.user-card {
+  @include mix.card-style;
+
+  padding: map.get(var.$spacing-scale, "2");
+  text-align: center;
+  margin-bottom: map.get(var.$spacing-scale, "2");
+  position: relative;
+
+  @include mix.transition-all;
+
+  &-avatar {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto map.get(var.$spacing-scale, "1");
+    border-radius: 50%;
+    background-color: color.adjust(var.$primary-color, $alpha: -0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid var.$primary-color;
+    transition: inherit;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &-info {
+    h3 {
+      color: var.$text-color;
+      margin-bottom: map.get(var.$spacing-scale, "05");
+      font-size: map.get(var.$spacing-scale, "20px");
+    }
+
+    p {
+      color: var.$text-color;
+      font-size: map.get(var.$spacing-scale, "1");
+      opacity: 0.8;
+    }
+  }
+}
+
+.dashboard-card {
+  @include mix.card-style;
+
+  padding: map.get(var.$spacing-scale, "2");
+  grid-column: span 2;
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: map.get(var.$spacing-scale, "2");
+  }
+
+  &-title {
+    color: var.$text-color;
+    display: flex;
+    align-items: center;
+    gap: map.get(var.$spacing-scale, "1");
+  }
+
+  @include mix.respond-to(var.$tablet) {
+    grid-column: span 1;
+  }
+}
+
+.stats-card {
+  @include mix.card-style;
+
+  display: flex;
+  align-items: center;
+  padding: map.get(var.$spacing-scale, "15");
+  gap: map.get(var.$spacing-scale, "15");
+
+  &-icon {
+    font-size: map.get(var.$spacing-scale, "2");
+    color: var.$primary-color;
+  }
+
+  &-value {
+    font-size: map.get(var.$spacing-scale, "15");
+    font-weight: bold;
+    color: var.$primary-color;
+  }
+}
+
+.saved-properties,
+.properties-viewed,
+.featured-properties,
+.favorite-properties {
+  @include mix.property-grid;
+}
+
+.property-card {
+  border: 1px solid var.$text-color;
+  border-radius: map.get(var.$spacing-scale, "05");
+  overflow: hidden;
+
+  @include mix.transition-all;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+
+  &-content {
+    padding: map.get(var.$spacing-scale, "1");
+
+    h4 {
+      margin: 0 0 map.get(var.$spacing-scale, "05") 0;
+      font-size: map.get(var.$spacing-scale, "1");
+    }
+
+    p {
+      margin: 0;
+      color: var.$primary-color;
+      font-size: map.get(var.$spacing-scale, "1");
+    }
+  }
+}

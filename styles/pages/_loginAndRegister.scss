@@ -1,0 +1,31 @@
+@use "../base/variables" as var;
+@use "../base/mixins" as mix;
+@use "sass:color";
+@use "sass:map";
+
+.login-container,
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 200px);
+  border-bottom: 2px solid #fff;
+  padding: map.get(var.$spacing-scale, "40px")
+    map.get(var.$spacing-scale, "20px");
+  background-color: color.scale(var.$bg-color, $lightness: 1%);
+
+  @include mix.respond-to(var.$mobile) {
+    min-height: calc(100vh - 150px);
+    padding: map.get(var.$spacing-scale, "30px")
+      map.get(var.$spacing-scale, "15px");
+
+    .form-title {
+      font-size: map.get(var.$spacing-scale, "15");
+    }
+
+    .form-label,
+    .form-input {
+      font-size: map.get(var.$spacing-scale, "1");
+    }
+  }
+}

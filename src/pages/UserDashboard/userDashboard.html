@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Real Estate</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../../../styles/main.css" />
+    <script>
+      (function() {
+        if (!window.chatbase || window.chatbase("getState") !== "initialized") {
+          window.chatbase = (...arguments) => {
+            if (!window.chatbase.q) {
+              window.chatbase.q = []
+            }
+            window.chatbase.q.push(arguments)
+          };
+          window.chatbase = new Proxy(window.chatbase, {
+            get(target, prop) {
+              if (prop === "q") {
+                return target.q
+              }
+              return (...args) => target(prop, ...args)
+            }
+          })
+        }
+        const onLoad = function() {
+          const script = document.createElement("script");
+          script.src = "https://www.chatbase.co/embed.min.js";
+          script.id = "mQqO-7Xjq2ledWuQhUk_f";
+          script.domain = "www.chatbase.co";
+          document.body.appendChild(script)
+        };
+        if (document.readyState === "complete") {
+          onLoad()
+        } else {
+          window.addEventListener("load", onLoad)
+        }
+      })();
+    </script>
+  </head>
+  <body class="dashboard">
+    <header class="dashboard-header">
+      <nav class="main-nav">
+        <ul class="nav-links">
+          <li>
+            <a href="../../../index.html"><i class="fas fa-home"></i> Home</a>
+          </li>
+          <li>
+            <a href="../PropertiesPage/propertiesPage.html"
+              ><i class="fas fa-building"></i> Properties</a
+            >
+          </li>
+          <li>
+            <a href="#" id="logout-btn"
+              ><i class="fas fa-sign-out-alt"></i> Logout</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="dashboard-main">
+      <aside class="dashboard-sidebar">
+        <div class="user-card">
+          <div class="user-card-avatar">
+            <img id="dashboard-avatar" class="fas fa-user-circle" src="" alt="User Avatar">
+          </div>
+          <div class="user-card-info">
+            <h3 id="dashboard-username"></h3>
+            <p id="dashboard-email"></p>
+          </div>
+        </div>
+          <div class="user-card-info">
+            <h3 id="dashboard-username"></h3>
+          </div>
+        </div>
+
+        <nav class="dashboard-nav">
+          <ul>
+            <li>
+              <a href="#" class="active"
+                ><i class="fas fa-chart-line"></i> Overview</a
+              >
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-heart"></i> Saved Listings</a>
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fas fa-bell"></i> Notifications
+              </a
+              >
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-cog"></i> Settings</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <section class="dashboard-content">
+        
+        <article class="dashboard-card">
+          <h3 class="dashboard-card-title">
+            <i class="fas fa-eye"></i> Properties Viewed
+          </h3>
+          <div class="properties-viewed" id="properties-viewed"></div>
+        </article>
+
+          <article class="dashboard-card">
+            <h3 class="dashboard-card-title">
+              <i class="fas fa-heart"></i> Saved Properties
+            </h3>
+            <div class="saved-properties" id="saved-properties"></div>
+          </article>
+
+          <article class="dashboard-card">
+            <h3 class="dashboard-card-title">
+              <i class="fas fa-random"></i> Featured Listings
+            </h3>
+            <div class="featured-properties" id="featured-properties"></div>
+          </article>
+
+          <article class="dashboard-card">
+            <h3 class="dashboard-card-title">
+              <i class="fas fa-heart"></i> Your Favorites
+            </h3>
+            <div class="favorite-properties" id="favorite-properties"></div>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-container">
+        <div class="footer-sections">
+          <div class="footer-section">
+            <h3>About Us</h3>
+            <a href="#" class="footer-link">Who We Are</a>
+            <a href="#" class="footer-link">Our Story</a>
+            <a href="#" class="footer-link">Our Team</a>
+            <a href="#" class="footer-link">Careers</a>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Help Center</h3>
+            <a href="#" class="footer-link">Customer Support</a>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Useful Links</h3>
+            <a href="#" class="footer-link">Privacy Policy</a>
+            <a href="#" class="footer-link">Terms of Service</a>
+            <a href="#" class="footer-link">Site Map</a>
+          </div>
+          
+          <div class="footer-section">
+            <h3>Contact Us</h3>
+            <a href="/src/pages/ContactAgent/contactAgent.html" class="footer-link">Contact Form</a>
+            <a href="#" class="footer-link">Support Email</a>
+            <a href="#" class="footer-link">Call Us</a>
+            <a href="#" class="footer-link">Live Chat</a>
+          </div>
+        </div>
+        
+        <div class="footer-socials">
+          
+            <a href="https://www.facebook.com/EPAMBulgaria"
+            target="_blank"
+            class="social-icon"
+          ><i class="fab fa-facebook-f"></i></a>
+          
+           <a href="https://x.com/EPAMSystems"
+            target="_blank"
+            class="social-icon"
+          ><i class="fab fa-twitter"></i></a>
+          
+            <a href="https://www.linkedin.com/in/bozhidar-nunev-33a7aa211/"
+            target="_blank"
+            class="social-icon"
+          ><i class="fab fa-linkedin-in"></i></a>
+          
+            <a href="https://www.instagram.com/epamsystems/"
+            target="_blank"
+            class="social-icon"
+          ><i class="fab fa-instagram"></i></a>
+        </div>
+        
+        <div class="footer-credit">
+          <p>&copy; 2025 Bozhidar Estate. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="../../scripts/userDashboard.js"></script>
+  </body>
+</html>

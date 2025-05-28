@@ -1,0 +1,130 @@
+@use "../base/variables" as var;
+@use "../base/mixins" as mix;
+@use "sass:color";
+@use "sass:map";
+
+.login-form,
+.register-form {
+  @include mix.card-style;
+
+  width: 100%;
+  max-width: 450px;
+  padding: map.get(var.$spacing-scale, "40px");
+  text-align: center;
+  border: solid 1px #fff;
+
+  @include mix.respond-to(var.$tablet) {
+    padding: map.get(var.$spacing-scale, "30px");
+  }
+
+  @include mix.respond-to(var.$mobile) {
+    padding: map.get(var.$spacing-scale, "20px")
+      map.get(var.$spacing-scale, "15px");
+  }
+}
+
+.login-form h2,
+.register-form h2 {
+  color: var.$primary-color;
+  font-size: map.get(var.$spacing-scale, "2");
+  margin-bottom: map.get(var.$spacing-scale, "30px");
+}
+
+@include mix.respond-to(var.$mobile) {
+  .login-form h2,
+  .register-form h2 {
+    font-size: map.get(var.$spacing-scale, "1.5");
+    margin-bottom: map.get(var.$spacing-scale, "20px");
+  }
+}
+
+.login-form label,
+.register-form label {
+  display: block;
+  text-align: left;
+  margin: map.get(var.$spacing-scale, "15px") 0
+    map.get(var.$spacing-scale, "05");
+  color: var.$heading-color;
+  font-size: map.get(var.$spacing-scale, "1");
+  font-weight: bold;
+}
+
+.login-form input,
+.register-form input {
+  width: 100%;
+  padding: map.get(var.$spacing-scale, "075")
+    map.get(var.$spacing-scale, "15px");
+  border: 2px solid var.$input-border-color;
+  border-radius: var.$border-radius;
+  background-color: var.$input-bg-color;
+  color: var.$text-color;
+  font-size: map.get(var.$spacing-scale, "1");
+
+  @include mix.transition-all;
+}
+
+.terms input {
+  width: auto;
+  margin-right: map.get(var.$spacing-scale, "10px");
+}
+
+.login-form input:focus,
+.register-form input:focus {
+  outline: none;
+  border-color: var.$primary-color;
+  box-shadow: 0 0 0 3px var.$focus-shadow;
+  background-color: var.$card-bg-color;
+}
+
+.login-form input::placeholder,
+.register-form input::placeholder {
+  color: color.scale(var.$heading-color, $lightness: 20%);
+}
+
+.form-group {
+  margin-bottom: map.get(var.$spacing-scale, "15px");
+}
+
+.terms {
+  display: flex;
+  align-items: center;
+  margin: map.get(var.$spacing-scale, "20px") 0;
+}
+
+.terms-input:focus {
+  box-shadow: 0 0 0 3px rgba(var.$primary-color, 0.2);
+}
+
+.terms label {
+  margin: 0;
+  font-weight: normal;
+}
+
+.login-form a,
+.register-form a {
+  color: var.$primary-color;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-form a:hover,
+.register-form a:hover {
+  color: var.$accent-color;
+}
+
+.login-form .btn,
+.register-form .btn {
+  @include mix.button-style;
+
+  width: 100%;
+  margin-top: map.get(var.$spacing-scale, "25px");
+  font-size: map.get(var.$spacing-scale, "1");
+  font-weight: bold;
+}
+
+.register-text,
+.login-text {
+  margin-top: map.get(var.$spacing-scale, "20px");
+  color: var.$heading-color;
+  font-size: map.get(var.$spacing-scale, "1");
+}
